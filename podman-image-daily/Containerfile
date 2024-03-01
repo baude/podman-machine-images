@@ -40,7 +40,8 @@ RUN rpm-ostree override replace --experimental --freeze \
     ostree container commit
 
 # Install subscription-manager and enable service to refresh certificates
-RUN rpm-ostree install subscription-manager && rm -fr /var/cache
+# Install qemu-user-static for bootc
+RUN rpm-ostree install subscription-manager qemu-user-static && rm -fr /var/cache
 RUN systemctl enable rhsmcertd.service
 
 COPY  core /var/lib/systemd/linger/core
