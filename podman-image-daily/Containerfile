@@ -45,3 +45,6 @@ RUN rpm-ostree install subscription-manager qemu-user-static && rm -fr /var/cach
 RUN systemctl enable rhsmcertd.service
 
 COPY  core /var/lib/systemd/linger/core
+
+# Disable ignition chrony overrides
+RUN systemctl disable coreos-platform-chrony-config.service
