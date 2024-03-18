@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 REPO="quay.io/baude"
 IMAGE_NAME="stage-podman-machine:latest"
